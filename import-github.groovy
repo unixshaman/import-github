@@ -1,3 +1,5 @@
+def hhh = ''
+
 pipeline {
   parameters {
     booleanParam(name: 'run', defaultValue: false, description: 'Подтверждение запуска сборки')
@@ -11,6 +13,27 @@ pipeline {
  }
 
     stages {
+      
+      
+      stage ('Init') {
+        steps {
+          script {
+            hhh = params.asdf1
+            if (hhh == 'asdf') {
+              def ggg = input {
+                message 'Неправильный параметр'
+                id 'checkAsdf'
+                ok 'Применить'
+                parameters {
+                  string defaultValue: 'fdsa 1234', description: '', name: 'asdfNew', trim: true
+                }
+              }
+              hhh = ggg.asdfNew
+            }
+          }
+        }
+      }
+
       stage('Build') {
         when { expression { params.run } }
          steps {
