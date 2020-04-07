@@ -20,9 +20,9 @@ pipeline {
           script {
             hhh = params.asdf1
             if (hhh == 'asdf') {
-              def ggg = input(id 'checkAsdf',
-                message 'Неправильный параметр',
-                ok 'Применить',
+              def ggg = input(id: 'checkAsdf',
+                message: 'Неправильный параметр',
+                ok: 'Применить',
                 parameters: [
                   string(defaultValue: 'fdsa 1234', description: '', name: 'asdfNew', trim: true)
                 ]
