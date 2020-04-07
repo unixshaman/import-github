@@ -25,10 +25,10 @@ pipeline {
                 id 'checkAsdf'
                 ok 'Применить'
                 parameters {
-                  string defaultValue: 'fdsa 1234', description: '', name: 'asdfNew', trim: true
+                  string(defaultValue: 'fdsa 1234', description: '', name: 'asdfNew', trim: true)
                 }
               }
-              hhh = ggg.asdfNew
+              hhh = ggg
             }
           }
         }
