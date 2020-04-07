@@ -12,6 +12,7 @@ pipeline {
 
     stages {
       stage('Build') {
+        when { expression { params.run } }
          steps {
             echo "qwe"
            echo "${params.asdf1} ${params.asdf2}"
