@@ -13,6 +13,7 @@ pipeline {
       stage('Build') {
          steps {
             echo "qwe"
+           echo "${asdf1} ${asdf2}"
          }
 
          post {
