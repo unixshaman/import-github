@@ -1,6 +1,11 @@
 def hhh = ''
 
 pipeline {
+  
+  triggers {
+  cron 'H * * * *'
+}
+  
   parameters {
     booleanParam(name: 'run', defaultValue: false, description: 'Подтверждение запуска сборки')
     string(defaultValue: 'asdf', description: 'asfd asdf', name: 'asdf1', trim: true)
