@@ -1,4 +1,4 @@
-def call(envir){
+def defineStandParams(envir){
   
   def globalParams = [:]
   
@@ -30,3 +30,5 @@ def call(envir){
 
   return globalParams
 }
+
+return defineStandParams();
