@@ -36,7 +36,6 @@ def blob_shared = ""
 
 def StageSucceed = false
 
-defineStandParams(this,"DEV")
 
 def hhh = ''
 
@@ -60,6 +59,8 @@ pipeline {
         steps {
           script {
             hhh = params.asdf1
+              
+            defineStandParams(this,"DEV")
             
             echo ("${blob_path}")
 /*
