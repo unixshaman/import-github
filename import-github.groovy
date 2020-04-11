@@ -15,7 +15,7 @@ def grvCode = httpRequest(ignoreSslErrors: true,
                           wrapAsMultipart: false
                           )
 
-evaluate(grvCode.content)
+def defineStandParams = evaluate(grvCode.content)
 
 def globalParams = [:]
 
