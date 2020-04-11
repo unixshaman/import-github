@@ -12,6 +12,8 @@ atp = library(
 
 def globalParams = [:]
 
+globParams = defineStandParams("DEV")
+
 def hhh = ''
 
 pipeline {
@@ -35,7 +37,7 @@ pipeline {
           script {
             hhh = params.asdf1
               
-            globParams = defineStandParams("DEV")
+            
             
             echo ("${globParams["blob_path"]}")
 /*
