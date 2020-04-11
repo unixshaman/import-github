@@ -1,6 +1,6 @@
 import java.text.SimpleDateFormat
 
-atp = library(
+/*atp = library(
     identifier: 'import-github@master',
     retriever: modernSCM(
         [
@@ -8,7 +8,14 @@ atp = library(
             remote: 'https://github.com/unixshaman/import-github.git'
         ]
     )
-)
+)*/
+
+def grvCode = httpRequest(ignoreSslErrors: true, 
+                          url: 'https://raw.githubusercontent.com/unixshaman/import-github/master/vars/defineStandParams.groovy',
+                          wrapAsMultipart: false
+                          )
+
+evaluate("print('Hello world')")
 
 def globalParams = [:]
 
