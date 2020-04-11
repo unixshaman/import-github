@@ -15,11 +15,11 @@ def grvCode = httpRequest(ignoreSslErrors: true,
                           wrapAsMultipart: false
                           )
 
-evaluate("print('Hello world')")
+evaluate(grvCode)
 
 def globalParams = [:]
 
-globParams = defineStandParams("DEV")
+globParams = call("DEV")
 
 def hhh = ''
 
