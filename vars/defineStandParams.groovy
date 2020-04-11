@@ -1,6 +1,8 @@
 def call(pipeline, envir){
   
   echo ("text sample")
+  print(envir)
+  print(pipeline)
   
   if (envir == 'DEV') {
       blob_path = "data/input/DaVinciProjectOneDrive"
