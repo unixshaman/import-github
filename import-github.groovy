@@ -36,7 +36,7 @@ def blob_shared = ""
 
 def StageSucceed = false
 
-defineStandParams(this,DEV)
+defineStandParams(this,"DEV")
 
 def hhh = ''
 
