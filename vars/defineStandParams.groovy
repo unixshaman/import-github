@@ -29,6 +29,4 @@ def defineStandParams(envir){
   }
 
   return globalParams
-};
-
-return this
+}
