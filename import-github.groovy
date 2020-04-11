@@ -20,8 +20,8 @@ def grvCode = httpRequest(ignoreSslErrors: true,
 
 def globalParams = [:]
 
-evaluate('mySharedLibrary.groovy')
-globParams = defineStandParams("DEV")
+// evaluate('mySharedLibrary.groovy')
+// globParams = defineStandParams("DEV")
 
 
 
@@ -48,7 +48,8 @@ pipeline {
           script {
             hhh = params.asdf1
               
-            
+            evaluate('mySharedLibrary.groovy')
+            globParams = defineStandParams("DEV")
             
             echo ("${globParams["blob_path"]}")
 /*
