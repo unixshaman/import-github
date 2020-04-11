@@ -1,5 +1,4 @@
 import java.text.SimpleDateFormat
-import groovy.transform.Field
 
 atp = library(
     identifier: 'import-github@master',
@@ -28,17 +27,12 @@ if (!etl_version_old?.trim()) {
     etl_version_old = "ETLOLD"
 }
 
-@groovy.transform.Field
+
 def blob_path = ""
-@groovy.transform.Field
 def storage_account = ""
-@groovy.transform.Field
 def blob_account_name = ""
-@groovy.transform.Field
 def envir = "111"
-@groovy.transform.Field
 def location = "UK"
-@groovy.transform.Field
 def blob_shared = ""
 
 def StageSucceed = false
@@ -67,7 +61,19 @@ pipeline {
           script {
             hhh = params.asdf1
               
-            defineStandParams(this,"DEV")
+            def globParams = defineStandParams("DEV")
+              
+          blob_path = globParams["blob_path"]
+          storage_account = globParams["storage_account"]
+          blob_account_name = globParams["blob_account_name"]
+          blob_shared = globParams["blob_shared"]
+          host_prod = globParams["host_prod"]
+          target_folder = globParams["target_folder"]
+          sas_blob_shared = globParams["sas_blob_shared"]
+          mlflow_url = globParams["mlflow_url"]
+          api_token_shared_id = globParams["api_token_shared_id"]
+          api_token_shared_id_w_token = globParams["api_token_shared_id_w_token"]
+          shared_id_user_w_psw = globParams["shared_id_user_w_psw"]
             
             echo ("${blob_path}")
 /*
