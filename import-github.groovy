@@ -10,13 +10,6 @@ import java.text.SimpleDateFormat
     )
 )*/
 
-def grvCode = httpRequest(ignoreSslErrors: true, 
-                          url: 'https://raw.githubusercontent.com/unixshaman/import-github/master/vars/defineStandParams.groovy',
-                          wrapAsMultipart: false,
-                          outputFile: 'mySharedLibrary.groovy'
-                          )
-
-
 
 def globalParams = [:]
 
@@ -47,7 +40,13 @@ pipeline {
         steps {
           script {
             hhh = params.asdf1
-              
+            
+            
+          def grvCode = httpRequest(ignoreSslErrors: true, 
+                      url: 'https://raw.githubusercontent.com/unixshaman/import-github/master/vars/defineStandParams.groovy',
+                      wrapAsMultipart: false,
+                      outputFile: 'mySharedLibrary.groovy'
+                      )
             evaluate('mySharedLibrary.groovy')
             globParams = defineStandParams("DEV")
             
