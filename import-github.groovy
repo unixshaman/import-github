@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat
+import groovy.transform.Field
 
 atp = library(
     identifier: 'import-github@master',
@@ -27,11 +28,17 @@ if (!etl_version_old?.trim()) {
     etl_version_old = "ETLOLD"
 }
 
+@groovy.transform.Field
 def blob_path = ""
+@groovy.transform.Field
 def storage_account = ""
+@groovy.transform.Field
 def blob_account_name = ""
+@groovy.transform.Field
 def envir = "111"
+@groovy.transform.Field
 def location = "UK"
+@groovy.transform.Field
 def blob_shared = ""
 
 def StageSucceed = false
