@@ -15,11 +15,11 @@ def grvCode = httpRequest(ignoreSslErrors: true,
                           wrapAsMultipart: false
                           )
 
-def defineStandParams = evaluate(grvCode.content)
+def lib = evaluate(grvCode.content)
 
 def globalParams = [:]
 
-globParams = defineStandParams("DEV")
+globParams = lib.defineStandParams("DEV")
 
 def hhh = ''
 
