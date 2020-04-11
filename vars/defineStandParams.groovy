@@ -1,4 +1,7 @@
 def call(pipeline, envir){
+  
+  echo ("text sample")
+  
   if (envir == 'DEV') {
       pipeline.blob_path = "data/input/DaVinciProjectOneDrive"
       pipeline.storage_account = "https://davincidev01.blob.core.windows.net"
