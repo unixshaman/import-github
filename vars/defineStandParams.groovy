@@ -1,4 +1,4 @@
-def call(pipeline, envir){
+def call(envir){
   
   def globalParams = [:]
   
