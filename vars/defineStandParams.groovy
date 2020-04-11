@@ -31,4 +31,4 @@ def defineStandParams(envir){
   return globalParams
 };
 
-return defineStandParams(envir)
+return this
