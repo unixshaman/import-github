@@ -12,14 +12,18 @@ import java.text.SimpleDateFormat
 
 def grvCode = httpRequest(ignoreSslErrors: true, 
                           url: 'https://raw.githubusercontent.com/unixshaman/import-github/master/vars/defineStandParams.groovy',
-                          wrapAsMultipart: false
+                          wrapAsMultipart: false,
+                          outputFile: 'mySharedLibrary.groovy'
                           )
 
-def lib = evaluate(grvCode.content)
+
 
 def globalParams = [:]
 
-globParams = lib.defineStandParams("DEV")
+evaluate('mySharedLibrary.groovy')
+globParams = defineStandParams("DEV")
+
+
 
 def hhh = ''
 
