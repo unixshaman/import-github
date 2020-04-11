@@ -47,7 +47,7 @@ pipeline {
                       wrapAsMultipart: false,
                       outputFile: 'mySharedLibrary.groovy'
                       )
-            evaluate('mySharedLibrary.groovy')
+            evaluate('./mySharedLibrary.groovy')
             globParams = defineStandParams("DEV")
             
             echo ("${globParams["blob_path"]}")
