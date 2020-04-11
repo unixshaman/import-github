@@ -1,10 +1,46 @@
+import java.text.SimpleDateFormat
+
+atp = library(
+    identifier: 'import-github@master',
+    retriever: modernSCM(
+        [
+            $class: 'GitSCMSource',
+            remote: 'https://github.com/unixshaman/import-github.git'
+        ]
+    )
+)
+
+def date = new Date()
+sdf = new SimpleDateFormat("yyyyMMddHHmmss")
+run_id = sdf.format(date)
+sdf_for_email = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
+run_id_for_email = sdf_for_email.format(date)
+println "Run id: ${run_id}"
+
+//import hudson.slaves.EnvironmentVariablesNodeProperty
+//import jenkins.model.Jenkins
+
+def snapshot_id = ""
+def checkpoint_job_url_params = ""
+def etl_version_old = "ETL"
+if (!etl_version_old?.trim()) {
+    etl_version_old = "ETLOLD"
+}
+
+def blob_path = ""
+def storage_account = ""
+def blob_account_name = ""
+def envir = "111"
+def location = "UK"
+def blob_shared = ""
+
+def StageSucceed = false
+
+defineStandParams(this,DEV)
+
 def hhh = ''
 
 pipeline {
-  
-  triggers {
-  cron 'H * * * *'
-}
   
   parameters {
     booleanParam(name: 'run', defaultValue: false, description: 'Подтверждение запуска сборки')
@@ -24,6 +60,9 @@ pipeline {
         steps {
           script {
             hhh = params.asdf1
+            
+            echo ("${blob_path}")
+/*
             if (hhh == 'asdf') {
               def ggg = input(id: 'checkAsdf',
                 message: 'Неправильный параметр',
@@ -34,6 +73,7 @@ pipeline {
               )
               hhh = ggg
             }
+*/            
           }
         }
       }
