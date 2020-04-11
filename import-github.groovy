@@ -19,7 +19,7 @@ evaluate(grvCode.content)
 
 def globalParams = [:]
 
-globParams = call("DEV")
+globParams = defineStandParams("DEV")
 
 def hhh = ''
 
