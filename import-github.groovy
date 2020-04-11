@@ -10,33 +10,7 @@ atp = library(
     )
 )
 
-def date = new Date()
-sdf = new SimpleDateFormat("yyyyMMddHHmmss")
-run_id = sdf.format(date)
-sdf_for_email = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
-run_id_for_email = sdf_for_email.format(date)
-println "Run id: ${run_id}"
-
-//import hudson.slaves.EnvironmentVariablesNodeProperty
-//import jenkins.model.Jenkins
-
-def snapshot_id = ""
-def checkpoint_job_url_params = ""
-def etl_version_old = "ETL"
-if (!etl_version_old?.trim()) {
-    etl_version_old = "ETLOLD"
-}
-
-
-def blob_path = ""
-def storage_account = ""
-def blob_account_name = ""
-def envir = "111"
-def location = "UK"
-def blob_shared = ""
-
-def StageSucceed = false
-
+def globalParams = [:]
 
 def hhh = ''
 
@@ -61,21 +35,9 @@ pipeline {
           script {
             hhh = params.asdf1
               
-            def globParams = defineStandParams("DEV")
-              
-          blob_path = globParams["blob_path"]
-          storage_account = globParams["storage_account"]
-          blob_account_name = globParams["blob_account_name"]
-          blob_shared = globParams["blob_shared"]
-          host_prod = globParams["host_prod"]
-          target_folder = globParams["target_folder"]
-          sas_blob_shared = globParams["sas_blob_shared"]
-          mlflow_url = globParams["mlflow_url"]
-          api_token_shared_id = globParams["api_token_shared_id"]
-          api_token_shared_id_w_token = globParams["api_token_shared_id_w_token"]
-          shared_id_user_w_psw = globParams["shared_id_user_w_psw"]
+            globParams = defineStandParams("DEV")
             
-            echo ("${blob_path}")
+            echo ("${globParams["blob_path"]}")
 /*
             if (hhh == 'asdf') {
               def ggg = input(id: 'checkAsdf',
