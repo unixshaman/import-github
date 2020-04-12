@@ -50,6 +50,8 @@ pipeline {
                       )
             // evaluate(new File('/mnt/resource/jenkins_agent/workspace/TEST/import-github/mySharedLibrary.groovy'))
             libs = load 'mySharedLibrary.groovy'
+            libs.sampleFunc()
+
             globParams = libs.defineStandParams("DEV")
             
             echo ("${globParams["blob_path"]}")
