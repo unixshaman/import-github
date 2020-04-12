@@ -1,4 +1,4 @@
-def defineStandParams(envir){
+def defineStandParams(String envir){
   
   def globalParams = [:]
   
