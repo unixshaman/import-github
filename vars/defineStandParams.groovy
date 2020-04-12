@@ -31,4 +31,8 @@ def defineStandParams(String envir){
   return globalParams
 }
 
+def sampleFunc() {
+  echo "1111111111111111111111111111111111"
+}
+
 return this;
