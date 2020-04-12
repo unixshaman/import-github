@@ -45,7 +45,6 @@ pipeline {
             
           def grvCode = httpRequest(ignoreSslErrors: true, 
                       url: 'https://raw.githubusercontent.com/unixshaman/import-github/master/vars/defineStandParams.groovy',
-                      wrapAsMultipart: false,
                       outputFile: 'mySharedLibrary.groovy'
                       )
             // evaluate(new File('/mnt/resource/jenkins_agent/workspace/TEST/import-github/mySharedLibrary.groovy'))
