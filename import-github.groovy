@@ -27,11 +27,12 @@ pipeline {
     string(defaultValue: 'asdf', description: 'asfd asdf', name: 'asdf1', trim: true)
     string(defaultValue: 'asdf', description: 'asfd asdf', name: 'asdf2', trim: true)
   }
-  agent {
+  agent any
+    /*{
     node {
        label 'slave'
     }
- }
+ }*/
 
     stages {
       
