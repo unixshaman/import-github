@@ -48,8 +48,9 @@ pipeline {
                       wrapAsMultipart: false,
                       outputFile: 'mySharedLibrary.groovy'
                       )
-            evaluate(new File('/mnt/resource/jenkins_agent/workspace/TEST/import-github/mySharedLibrary.groovy'))
-            globParams = defineStandParams("DEV")
+            // evaluate(new File('/mnt/resource/jenkins_agent/workspace/TEST/import-github/mySharedLibrary.groovy'))
+            libs = load 'mySharedLibrary.groovy'
+            globParams = libs.defineStandParams("DEV")
             
             echo ("${globParams["blob_path"]}")
 /*
